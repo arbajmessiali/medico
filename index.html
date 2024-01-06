@@ -59,13 +59,29 @@
         </tr>
         <tr>
             <td>
-                <button type="button" onclick="button()">Click</button>
+                Dose per day
             </td>
             <td>
 
             </td>
             <td>
-                <div id="calc"></div> 
+                <select id="dpd" placeholder="Dose per day">
+                    <option value="">Selec Dose</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="button()">Click</button>
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                <div id="dps"></div>
             </td>
         </tr>
         </table>
@@ -74,6 +90,8 @@
         var e = document.getElementById("ss");
         var d = document.getElementById("dpk")
         var ca = document.getElementById("calc")
+        var dd = document.getElementById("dpd")
+        var ds = document.getElementById("dps")
         var dpk
         function something(){
             var value = e.value;
@@ -92,11 +110,14 @@
                 dpk = 16
                 d.innerHTML = dpk
             }
+
+
         }
 
         function button(){
             var weight = document.getElementById("wt").value
-            ca.innerHTML = weight * dpk
+            var dpd = dd.value;
+            ds.innerHTML = (weight * dpk/dpd)
         }
       </script>
    </html>
